@@ -14,13 +14,13 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-precise-3.8
+      - llvm-toolchain-precise-3.9
     packages:
       - gdb
       - g++-4.9
       - gfortran-4.9
       - liblapack-dev
-      - clang-3.8
+      - clang-3.9
       - sox
       - python3
       - python3-dev
@@ -52,7 +52,7 @@ script:
   # See http://petereisentraut.blogspot.com/2011/05/ccache-and-clang.html and
   # http://peter.eisentraut.org/blog/2014/12/01/ccache-and-clang-part-3/
   # for the explanation why extra switches needed for clang with ccache.
-  - CXX="ccache clang++-3.8 -Qunused-arguments -fcolor-diagnostics -Wno-tautological-compare"
+  - CXX="ccache clang++-3.9 -Qunused-arguments -fcolor-diagnostics -Wno-tautological-compare"
     CFLAGS=""
     LDFLAGS="-llapack -Wl,-fuse-ld=gold"
     INCDIRS="$XROOT/usr/include"
