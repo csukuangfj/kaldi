@@ -30,6 +30,7 @@ branches:
   only:
     - master
     - pybind11
+    - sync-pybind11
 
 before_install:
   - cat /proc/sys/kernel/core_pattern
