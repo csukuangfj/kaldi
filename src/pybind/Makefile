@@ -110,7 +110,7 @@ all: $(LIBFILE)
 	$(CXX) -c $(CXXFLAGS) -o $@ $<
 
 $(LIBFILE): $(ADDLIBS) $(CCFILES_OBJS)
-	$(CXX) $(LDFLAGS) -shared -o $@ $(CCFILES_OBJS) -Wl,--no-whole-archive -Wl,-rpath=$(CURDIR)/../lib $(LDFLAGS) $(LDLIBS) $(EXTRA_LDLIBS)
+	$(CXX) -shared -o $@ $(CCFILES_OBJS) -Wl,--no-whole-archive -Wl,-rpath=$(CURDIR)/../lib $(LDFLAGS) $(LDLIBS) $(EXTRA_LDLIBS)
 	python3 -c 'import kaldi_pybind'  # this line is a test.
 
 clean:
