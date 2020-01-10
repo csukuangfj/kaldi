@@ -51,6 +51,7 @@ COMPILER = $(shell $(CXX) -v 2>&1)
 ifeq ($(findstring clang,$(COMPILER)),clang)
 # Suppress annoying clang warnings that are perfectly valid per spec.
 CXXFLAGS += -Wno-mismatched-tags
+PYBIND_LDFLAGS = -fuse-ld=gold
 endif
 
 ## Use the following for STATIC LINKING of the SEQUENTIAL version of MKL
